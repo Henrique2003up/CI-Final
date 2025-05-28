@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 575302845}
   - component: {fileID: 575302844}
   m_Layer: 5
-  m_Name: Aprender_Btn (3)
+  m_Name: Frutas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 1086923495}
   - component: {fileID: 1086923494}
   m_Layer: 5
-  m_Name: Aprender_Btn (1)
+  m_Name: Habitos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2162,7 +2162,7 @@ GameObject:
   - component: {fileID: 2125781505}
   - component: {fileID: 2125781504}
   m_Layer: 5
-  m_Name: Aprender_Btn (4)
+  m_Name: Saudavel ou n
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 2137111603}
   - component: {fileID: 2137111602}
   m_Layer: 5
-  m_Name: Aprender_Btn (2)
+  m_Name: Legumes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
