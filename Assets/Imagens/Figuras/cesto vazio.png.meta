@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cesto vazio_0: -6968940510714748290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

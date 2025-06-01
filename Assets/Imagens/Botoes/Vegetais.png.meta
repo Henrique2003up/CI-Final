@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vegetais_0: -5302652493254617973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      memoria brocolo_0: 6643740314989226085
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

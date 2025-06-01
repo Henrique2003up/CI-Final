@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      galo logo_0: 2013695958624294942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

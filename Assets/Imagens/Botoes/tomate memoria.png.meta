@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tomate memoria_0: 6609326301417027642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

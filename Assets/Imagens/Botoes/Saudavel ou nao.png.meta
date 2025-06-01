@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Saudavel ou nao_0: 6820069828190974295
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

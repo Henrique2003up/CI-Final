@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "cesto com ma\xE7as(cair)_0": 6237450094977447003
+      "cesto com ma\xE7as(cair)_1": -8568320441605957736
+      "cesto com ma\xE7as(cair)_2": 1392556550088346966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
