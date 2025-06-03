@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 148827407}
   - component: {fileID: 148827406}
   m_Layer: 5
-  m_Name: Sono
+  m_Name: "Refei\xE7\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,8 +285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 351.83, y: -90}
-  m_SizeDelta: {x: -1084.447, y: -609.698}
+  m_AnchoredPosition: {x: 358.58, y: -86.203}
+  m_SizeDelta: {x: -1098, y: -617.292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &148827406
 MonoBehaviour:
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3595527054343815214, guid: 6b31649f7d74ce34f92fb5be7f3070c5, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1051b5323f1500b43a14efc46fa9252d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Escolhe_Nivel
+  SceneName: Escolhe_Nivel
 --- !u!1 &1291526109
 GameObject:
   m_ObjectHideFlags: 0

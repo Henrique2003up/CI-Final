@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 148827407}
   - component: {fileID: 148827406}
   m_Layer: 5
-  m_Name: Sono
+  m_Name: "\xC1gua"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,9 +357,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 5232725430944819438, guid: 0c2d13e8ea19d494f8baf435ee9bd760, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1051b5323f1500b43a14efc46fa9252d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Pergunta 3
+  SceneName: Pergunta 3
 --- !u!1 &1593004632
 GameObject:
   m_ObjectHideFlags: 0
