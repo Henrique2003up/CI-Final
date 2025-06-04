@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 11_0": 3111424254091279718
+      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 11_1": 2593056179820380773
+      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 11_2": 5170301843776246769
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
