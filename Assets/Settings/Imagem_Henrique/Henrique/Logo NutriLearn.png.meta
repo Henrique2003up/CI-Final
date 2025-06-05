@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Logo NutriLearn_0: -3608911948764320455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

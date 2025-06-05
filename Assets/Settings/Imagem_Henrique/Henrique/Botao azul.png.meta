@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Botao azul_0: 706995799476708933
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
