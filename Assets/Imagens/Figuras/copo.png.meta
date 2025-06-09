@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: 0c2d13e8ea19d494f8baf435ee9bd760
 TextureImporter:
+<<<<<<< HEAD
   internalIDToNameTable:
   - first:
       213: -8096670900358420355
@@ -8,11 +9,18 @@ TextureImporter:
   - first:
       213: 5232725430944819438
     second: copo_1
+=======
+  internalIDToNameTable: []
+>>>>>>> 76098106bc7e6e84408dfa4ca0b4282c427bbd8d
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD
     enableMipMap: 0
+=======
+    enableMipMap: 1
+>>>>>>> 76098106bc7e6e84408dfa4ca0b4282c427bbd8d
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -43,6 +51,7 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
+<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -50,6 +59,15 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+=======
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+>>>>>>> 76098106bc7e6e84408dfa4ca0b4282c427bbd8d
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +76,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
+<<<<<<< HEAD
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
+=======
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> 76098106bc7e6e84408dfa4ca0b4282c427bbd8d
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -99,6 +123,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
@@ -211,6 +236,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> 76098106bc7e6e84408dfa4ca0b4282c427bbd8d
     outline: []
     customData: 
     physicsShape: []
@@ -224,9 +254,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< HEAD
     nameFileIdTable:
       copo_0: -8096670900358420355
       copo_1: 5232725430944819438
+=======
+    nameFileIdTable: {}
+>>>>>>> 76098106bc7e6e84408dfa4ca0b4282c427bbd8d
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
