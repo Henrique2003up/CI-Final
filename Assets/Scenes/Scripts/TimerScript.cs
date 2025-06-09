@@ -29,7 +29,8 @@ public class TimerScript : MonoBehaviour
     }
     public int GetTimerAndStop()
     {
-        isCounting = false;
+        // isCounting = false; // Remova ou comente esta linha
         return (int)currentTimer;
+
     }
 }

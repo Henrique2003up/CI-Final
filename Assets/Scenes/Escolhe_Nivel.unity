@@ -648,8 +648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.37805, y: 315.811}
-  m_SizeDelta: {x: -834.755, y: -889.623}
+  m_AnchoredPosition: {x: 1.2280273, y: 315.811}
+  m_SizeDelta: {x: -733.542, y: -889.623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412763616
 MonoBehaviour:
@@ -673,8 +673,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Escolhe o Teu N\xEDvel"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 386f7c36be2dd3e43a615c8c7aa9c232, type: 2}
+  m_sharedMaterial: {fileID: 529781417534926454, guid: 386f7c36be2dd3e43a615c8c7aa9c232, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
