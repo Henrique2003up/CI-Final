@@ -40,7 +40,6 @@ public class GameManager2 : MonoBehaviour
     void UpdateUI()
     {
         pontosText.text = $"{score}";
-        nivelText.text = $"NÍVEL {currentLevel}";
     }
 
     void CheckLevelProgress()

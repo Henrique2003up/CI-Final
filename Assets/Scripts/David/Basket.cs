@@ -2,25 +2,40 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    public float speed = 5f;
+    Transform tr;
 
-    void Update()
+    void Start()
     {
-        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(move, 0, 0);
+        tr = GetComponent<Transform>();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Fruit"))
+        // Debug para a seta direita
+        if (Input.GetKey(KeyCode.RightArrow) == true)
         {
-            GameManager2.instance.CollectGoodFruit();
-            Destroy(other.gameObject);
+            Debug.Log("Seta Direita Pressionada! Pos X: " + tr.position.x); // Adicione este log
+            if (tr.position.x < 653f)
+            {
+                tr.position += new Vector3(0.5f, 0f, 0f);
+            }
+            else
+            {
+                Debug.Log("Limite de X atingido (direita): " + tr.position.x); // Adicione este log
+            }
         }
-        else if (other.CompareTag("BadFruit"))
+
+        // Debug para a seta esquerda
+        if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
-            GameManager2.instance.LoseLife();
-            Destroy(other.gameObject);
+            Debug.Log("Seta Esquerda Pressionada! Pos X: " + tr.position.x); // Adicione este log
+            if (tr.position.x > -129f)
+            {
+                tr.position += new Vector3(-0.5f, 0f, 0f);
+            }
+            else
+            {
+                Debug.Log("Limite de X atingido (esquerda): " + tr.position.x); // Adicione este log
+            }
         }
     }
 }

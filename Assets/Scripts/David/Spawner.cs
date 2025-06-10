@@ -3,7 +3,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] fruits; // boas e más
-    public float spawnInterval = 1.5f;
+    public float spawnInterval = 1f;
     public float xRange = 7f;
 
     void Start()
