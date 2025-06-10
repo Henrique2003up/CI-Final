@@ -17,9 +17,16 @@ public class Fruit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Basket")) // << Mude aqui
+        Debug.Log("OnTriggerEnter2D chamado! Colidiu com: " + collision.gameObject.name + " (Tag: " + collision.gameObject.tag + ")");
+
+        // A LÓGICA DE DESTROI DEVE SER APENAS AQUI:
+        if (collision.gameObject.name == "Basket") // Ou collision.gameObject.name == "Basket"
         {
+            Debug.Log("Condição 'Basket' satisfeita! Destruindo fruta.");
             Destroy(this.gameObject);
         }
+        // REMOVA QUALQUER OUTRO DESTROY(THIS.GAMEOBJECT) FORA DESTA CONDIÇÃO.
+        // Exemplo de algo a remover:
+        // else { Destroy(this.gameObject); } <-- Isto destruiria se colidisse com qualquer coisa que não fosse o cesto.
     }
 }

@@ -14,9 +14,9 @@ public class Basket : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) == true)
         {
             Debug.Log("Seta Direita Pressionada! Pos X: " + tr.position.x); // Adicione este log
-            if (tr.position.x < 653f)
+            if (tr.position.x < 580f)
             {
-                tr.position += new Vector3(0.5f, 0f, 0f);
+                tr.position += new Vector3(1f, 0f, 0f);
             }
             else
             {
@@ -28,7 +28,7 @@ public class Basket : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
             Debug.Log("Seta Esquerda Pressionada! Pos X: " + tr.position.x); // Adicione este log
-            if (tr.position.x > -129f)
+            if (tr.position.x > 240f)
             {
                 tr.position += new Vector3(-0.5f, 0f, 0f);
             }
