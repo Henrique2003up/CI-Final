@@ -56,12 +56,14 @@ public class GameControllerfacil : MonoBehaviour
     }
 
     public void OnBoardButtonClick(int index)
+
     {
         if (boardState[index] != "" || gameOverPanel.activeSelf)
+
         {
             return;
         }
-
+        Debug.Log($"Clicked cell {index}");
         string currentPlayerSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
         boardState[index] = currentPlayerSymbol;
 
