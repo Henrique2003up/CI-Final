@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 834080031bec6d042b79bdbf0f08b863
+guid: b681ef8e2edf07042b4947934df300e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5257738460244464006
-    second: reiniciar_0
+      213: 1427320067400864919
+    second: vitoria_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: reiniciar_0
+      name: vitoria_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1308
-        height: 409
+        width: 2036
+        height: 2173
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 681d7ccd54d37f840800000000000000
-      internalID: 5257738460244464006
+      spriteID: 794173ef90cdec310800000000000000
+      internalID: 1427320067400864919
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 46c54526895aac947bf76e5338dfcd57
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      reiniciar_0: 5257738460244464006
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
