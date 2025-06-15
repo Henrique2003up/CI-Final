@@ -365,8 +365,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496, y: 197}
-  m_SizeDelta: {x: 592.329, y: 176.217}
+  m_AnchoredPosition: {x: 29, y: 0.000015259}
+  m_SizeDelta: {x: 879.49, y: 254.339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605076645
 MonoBehaviour:
@@ -388,12 +388,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "O famoso jogo do galo,s\xF3 que dessa vez com legumes!\n     Quando estiveres
-    pronto,clique em \"Vamos l\xE1\",\n             Para iniciar o jogo! Boa sorte:
+  m_text: "O Famoso Jogo do Galo, s\xF3 que desta vez com frutas e legumes!\nQuando
+    estiveres pronto,clique em \"Vamos l\xE1\",\nPara iniciar o jogo! Boa sorte:
     D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -417,14 +417,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
-  m_HorizontalAlignment: 1
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 497.8974, y: 223.82555, z: -1511.9679, w: -411.1083}
+  m_margin: {x: -3.5156252, y: -1.2985382, z: 5.623352, w: 1.2554775}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -587,8 +587,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 567, y: -68}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54, y: 233.26}
+  m_SizeDelta: {x: -1104.874, y: -931.185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736175468
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jodo do Galo
+  m_text: Jogo do Galo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386f7c36be2dd3e43a615c8c7aa9c232, type: 2}
   m_sharedMaterial: {fileID: 529781417534926454, guid: 386f7c36be2dd3e43a615c8c7aa9c232, type: 2}
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 91.35742, y: 200.98575, z: 0, w: 0}
+  m_margin: {x: -4.536072, y: -7.1736145, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -874,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 177.5849, y: -403.97528}
+  m_AnchoredPosition: {x: 29, y: -267.76}
   m_SizeDelta: {x: 693.835, y: 102.049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409158655
@@ -955,7 +955,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 9056506950367773500, guid: 21e6966016151ab48957cb7ef1c7352c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1163,8 +1163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -603, y: -143}
-  m_SizeDelta: {x: 539.891, y: 539.89}
+  m_AnchoredPosition: {x: -598.48, y: 108.73}
+  m_SizeDelta: {x: 317.461, y: 317.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949553234
 MonoBehaviour:
@@ -1188,7 +1188,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 2013695958624294942, guid: de777b41cdd60ac44b055d39f76f2e50, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

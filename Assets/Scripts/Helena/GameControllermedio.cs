@@ -1,15 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
-public class GameControllerMedio : MonoBehaviour
+public class GameControllermedio : MonoBehaviour
 {
     [Header("UI Elements")]
     public Button[] boardButtons;
     public TextMeshProUGUI turnText;
-    public GameObject gameOverPanel;
-    public TextMeshProUGUI gameOverText;
 
     [Header("Game Images")]
     public Sprite emptySprite;
@@ -36,93 +35,129 @@ public class GameControllerMedio : MonoBehaviour
     void InitializeGame()
     {
         boardState = new string[9];
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < boardState.Length; i++)
         {
             boardState[i] = "";
-            boardButtons[i].image.sprite = emptySprite;
+            if (boardButtons[i].image != null)
+                boardButtons[i].image.sprite = emptySprite;
+
             boardButtons[i].interactable = true;
         }
 
-        isPlayerMacaTurn = true;
-        turnText.text = "É a vez do Jogador Maca";
         movesMade = 0;
-        gameOverPanel.SetActive(false);
+        isPlayerMacaTurn = Random.value > 0.5f;
+
+        if (isPlayerMacaTurn)
+        {
+            turnText.text = "É a vez do Jogador Maçã";
+        }
+        else
+        {
+            turnText.text = "É a vez do Jogador Brócolo";
+            Invoke("MakeAIMove", 1f);
+        }
     }
 
     public void OnBoardButtonClick(int index)
     {
-        if (boardState[index] != "" || !isPlayerMacaTurn || gameOverPanel.activeSelf)
+        if (boardState[index] != "" || !boardButtons[index].interactable)
             return;
 
-        MakeMove(index, "Maca", macaSprite);
-        isPlayerMacaTurn = false;
+        string currentPlayerSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
+        boardState[index] = currentPlayerSymbol;
 
-        if (!gameOverPanel.activeSelf)
-            Invoke("MakeAIMove", 0.8f); // Aguardar antes da IA jogar
+        if (boardButtons[index].image != null)
+            boardButtons[index].image.sprite = isPlayerMacaTurn ? macaSprite : brocoloSprite;
+
+        boardButtons[index].interactable = false;
+        movesMade++;
+
+        if (CheckForWin())
+        {
+            if (isPlayerMacaTurn)
+                SceneManager.LoadScene("VitoriaVerde");
+            else
+                SceneManager.LoadScene("DerrotaVerde");
+        }
+        else if (movesMade == 9)
+        {
+            SceneManager.LoadScene("EmpateVerde");
+        }
+        else
+        {
+            isPlayerMacaTurn = !isPlayerMacaTurn;
+
+            if (!isPlayerMacaTurn)
+            {
+                turnText.text = "É a vez do Jogador Brócolo";
+                Invoke("MakeAIMove", 0.6f);
+            }
+            else
+            {
+                turnText.text = "É a vez do Jogador Maçã";
+            }
+        }
     }
 
     void MakeAIMove()
     {
-        int bestMove = FindBlockingMove();
-
-        if (bestMove == -1)
+        // 1. Tentar ganhar
+        for (int i = 0; i < boardState.Length; i++)
         {
-            // Faz jogada aleatória
-            List<int> emptyIndices = new List<int>();
-            for (int i = 0; i < 9; i++)
-                if (boardState[i] == "") emptyIndices.Add(i);
-
-            if (emptyIndices.Count > 0)
-                bestMove = emptyIndices[Random.Range(0, emptyIndices.Count)];
+            if (boardState[i] == "")
+            {
+                boardState[i] = "Brocolo";
+                if (CheckForWinSimulation("Brocolo"))
+                {
+                    boardState[i] = "";
+                    OnBoardButtonClick(i);
+                    return;
+                }
+                boardState[i] = "";
+            }
         }
 
-        if (bestMove != -1)
+        // 2. Bloquear o jogador
+        for (int i = 0; i < boardState.Length; i++)
         {
-            MakeMove(bestMove, "Brocolo", brocoloSprite);
-            isPlayerMacaTurn = true;
+            if (boardState[i] == "")
+            {
+                boardState[i] = "Maca";
+                if (CheckForWinSimulation("Maca"))
+                {
+                    boardState[i] = "";
+                    OnBoardButtonClick(i);
+                    return;
+                }
+                boardState[i] = "";
+            }
+        }
+
+        // 3. Jogada aleatória
+        List<int> availableMoves = new List<int>();
+        for (int i = 0; i < boardState.Length; i++)
+        {
+            if (boardState[i] == "")
+            {
+                availableMoves.Add(i);
+            }
+        }
+
+        if (availableMoves.Count > 0)
+        {
+            int aiMove = availableMoves[Random.Range(0, availableMoves.Count)];
+            OnBoardButtonClick(aiMove);
         }
     }
 
-    void MakeMove(int index, string player, Sprite sprite)
+    bool CheckForWin()
     {
-        boardState[index] = player;
-        boardButtons[index].image.sprite = sprite;
-        boardButtons[index].interactable = false;
-        movesMade++;
-
-        if (CheckForWin(player))
-        {
-            EndGame(player + " venceu!");
-        }
-        else if (movesMade == 9)
-        {
-            EndGame("Empate!");
-        }
-        else
-        {
-            turnText.text = "É a vez do Jogador " + (isPlayerMacaTurn ? "Maca" : "Brocolo");
-        }
+        string currentSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
+        return CheckForWinSimulation(currentSymbol);
     }
 
-    int FindBlockingMove()
-    {
-        for (int i = 0; i < winConditions.GetLength(0); i++)
-        {
-            int a = winConditions[i, 0];
-            int b = winConditions[i, 1];
-            int c = winConditions[i, 2];
-
-            if (boardState[a] == "Maca" && boardState[b] == "Maca" && boardState[c] == "")
-                return c;
-            if (boardState[a] == "Maca" && boardState[c] == "Maca" && boardState[b] == "")
-                return b;
-            if (boardState[b] == "Maca" && boardState[c] == "Maca" && boardState[a] == "")
-                return a;
-        }
-        return -1; // Nenhum bloqueio necessário
-    }
-
-    bool CheckForWin(string symbol)
+    // Usado também pela IA para simular vitórias
+    bool CheckForWinSimulation(string symbol)
     {
         for (int i = 0; i < winConditions.GetLength(0); i++)
         {
@@ -130,23 +165,13 @@ public class GameControllerMedio : MonoBehaviour
             int b = winConditions[i, 1];
             int c = winConditions[i, 2];
 
-            if (boardState[a] == symbol && boardState[b] == symbol && boardState[c] == symbol)
+            if (boardState[a] == symbol &&
+                boardState[b] == symbol &&
+                boardState[c] == symbol)
+            {
                 return true;
+            }
         }
         return false;
-    }
-
-    void EndGame(string message)
-    {
-        gameOverPanel.SetActive(true);
-        gameOverText.text = message;
-
-        foreach (Button btn in boardButtons)
-            btn.interactable = false;
-    }
-
-    public void RestartGame()
-    {
-        InitializeGame();
     }
 }

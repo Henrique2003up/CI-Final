@@ -1,21 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameControllerDificil : MonoBehaviour
 {
     [Header("UI Elements")]
     public Button[] boardButtons;
     public TextMeshProUGUI turnText;
-    public GameObject gameOverPanel;
-    public TextMeshProUGUI gameOverText;
 
     [Header("Game Images")]
     public Sprite emptySprite;
     public Sprite macaSprite;
     public Sprite brocoloSprite;
 
+    [Header("Game State")]
     private string[] boardState;
     private bool isPlayerMacaTurn;
     private int movesMade;
@@ -35,104 +35,148 @@ public class GameControllerDificil : MonoBehaviour
     void InitializeGame()
     {
         boardState = new string[9];
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < boardState.Length; i++)
         {
             boardState[i] = "";
-            boardButtons[i].image.sprite = emptySprite;
+            if (boardButtons[i].image != null)
+                boardButtons[i].image.sprite = emptySprite;
+
             boardButtons[i].interactable = true;
         }
 
-        isPlayerMacaTurn = true;
-        turnText.text = "É a vez do Jogador Maca";
         movesMade = 0;
-        gameOverPanel.SetActive(false);
+
+        isPlayerMacaTurn = Random.value > 0.5f;
+
+        if (isPlayerMacaTurn)
+        {
+            turnText.text = "É a vez do Jogador Maçã";
+        }
+        else
+        {
+            turnText.text = "É a vez do Jogador Brócolo";
+            Invoke("MakeAIMove", 1f);
+        }
     }
 
     public void OnBoardButtonClick(int index)
     {
-        if (boardState[index] != "" || !isPlayerMacaTurn || gameOverPanel.activeSelf)
+        if (boardState[index] != "" || !boardButtons[index].interactable)
             return;
 
-        MakeMove(index, "Maca", macaSprite);
-        isPlayerMacaTurn = false;
+        string currentPlayerSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
+        boardState[index] = currentPlayerSymbol;
 
-        if (!gameOverPanel.activeSelf)
-            Invoke("MakeAIMove", 0.6f);
+        if (boardButtons[index].image != null)
+            boardButtons[index].image.sprite = isPlayerMacaTurn ? macaSprite : brocoloSprite;
+
+        boardButtons[index].interactable = false;
+        movesMade++;
+
+        if (CheckForWin())
+        {
+            if (isPlayerMacaTurn)
+                SceneManager.LoadScene("ParabensVerde");
+            else
+                SceneManager.LoadScene("DerrotaVerde");
+        }
+        else if (movesMade == 9)
+        {
+            SceneManager.LoadScene("EmpateVerde");
+        }
+        else
+        {
+            isPlayerMacaTurn = !isPlayerMacaTurn;
+
+            if (!isPlayerMacaTurn)
+            {
+                turnText.text = "É a vez do Jogador Brócolo";
+                Invoke("MakeAIMove", 0.6f);
+            }
+            else
+            {
+                turnText.text = "É a vez do Jogador Maçã";
+            }
+        }
     }
 
     void MakeAIMove()
     {
-        int move = FindBestMove();
+        int move = FindBestMoveForAI();
+
         if (move != -1)
         {
-            MakeMove(move, "Brocolo", brocoloSprite);
-            isPlayerMacaTurn = true;
+            OnBoardButtonClick(move);
         }
     }
 
-    void MakeMove(int index, string player, Sprite sprite)
+    int FindBestMoveForAI()
     {
-        boardState[index] = player;
-        boardButtons[index].image.sprite = sprite;
-        boardButtons[index].interactable = false;
-        movesMade++;
+        string aiSymbol = "Brocolo";
+        string playerSymbol = "Maca";
 
-        if (CheckForWin(player))
+        for (int i = 0; i < boardState.Length; i++)
         {
-            EndGame(player + " venceu!");
+            if (boardState[i] == "")
+            {
+                boardState[i] = aiSymbol;
+                if (CheckForWinCondition(aiSymbol))
+                {
+                    boardState[i] = "";
+                    return i;
+                }
+                boardState[i] = "";
+            }
         }
-        else if (movesMade == 9)
+
+        for (int i = 0; i < boardState.Length; i++)
         {
-            EndGame("Empate!");
+            if (boardState[i] == "")
+            {
+                boardState[i] = playerSymbol;
+                if (CheckForWinCondition(playerSymbol))
+                {
+                    boardState[i] = "";
+                    return i;
+                }
+                boardState[i] = "";
+            }
         }
-        else
+
+        if (boardState[4] == "")
         {
-            turnText.text = "É a vez do Jogador " + (isPlayerMacaTurn ? "Maca" : "Brocolo");
+            return 4;
         }
-    }
 
-    int FindBestMove()
-    {
-        // 1. Tenta vencer
-        int winMove = FindCriticalMove("Brocolo");
-        if (winMove != -1) return winMove;
-
-        // 2. Bloqueia o jogador
-        int blockMove = FindCriticalMove("Maca");
-        if (blockMove != -1) return blockMove;
-
-        // 3. Prioridade: centro
-        if (boardState[4] == "") return 4;
-
-        // 4. Canto estratégico
-        int[] corners = { 0, 2, 6, 8 };
+        int[] corners = new int[] { 0, 2, 6, 8 };
         foreach (int i in corners)
-            if (boardState[i] == "") return i;
-
-        // 5. Laterais
-        int[] sides = { 1, 3, 5, 7 };
-        foreach (int i in sides)
-            if (boardState[i] == "") return i;
-
-        return -1; // Não encontrou jogada possível (deveria ser empate)
-    }
-
-    int FindCriticalMove(string symbol)
-    {
-        for (int i = 0; i < winConditions.GetLength(0); i++)
         {
-            int a = winConditions[i, 0];
-            int b = winConditions[i, 1];
-            int c = winConditions[i, 2];
-
-            if (boardState[a] == symbol && boardState[b] == symbol && boardState[c] == "") return c;
-            if (boardState[a] == symbol && boardState[c] == symbol && boardState[b] == "") return b;
-            if (boardState[b] == symbol && boardState[c] == symbol && boardState[a] == "") return a;
+            if (boardState[i] == "")
+                return i;
         }
+
+        List<int> availableMoves = new List<int>();
+        for (int i = 0; i < boardState.Length; i++)
+        {
+            if (boardState[i] == "")
+                availableMoves.Add(i);
+        }
+
+        if (availableMoves.Count > 0)
+        {
+            return availableMoves[Random.Range(0, availableMoves.Count)];
+        }
+
         return -1;
     }
 
-    bool CheckForWin(string symbol)
+    bool CheckForWin()
+    {
+        string currentSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
+        return CheckForWinCondition(currentSymbol);
+    }
+
+    bool CheckForWinCondition(string symbol)
     {
         for (int i = 0; i < winConditions.GetLength(0); i++)
         {
@@ -140,22 +184,13 @@ public class GameControllerDificil : MonoBehaviour
             int b = winConditions[i, 1];
             int c = winConditions[i, 2];
 
-            if (boardState[a] == symbol && boardState[b] == symbol && boardState[c] == symbol)
+            if (boardState[a] == symbol &&
+                boardState[b] == symbol &&
+                boardState[c] == symbol)
+            {
                 return true;
+            }
         }
         return false;
-    }
-
-    void EndGame(string message)
-    {
-        gameOverPanel.SetActive(true);
-        gameOverText.text = message;
-        foreach (Button btn in boardButtons)
-            btn.interactable = false;
-    }
-
-    public void RestartGame()
-    {
-        InitializeGame();
     }
 }

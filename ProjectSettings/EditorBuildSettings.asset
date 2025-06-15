@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Henrique/Jogo/Pergunta 3.unity
     guid: cacfad46fa58b2a4c8924076bc95bd06
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Henrique/Jogo/Pergunta 1.2.unity
     guid: 8ae5c63c554018641a779587de9b6119
   - enabled: 1
@@ -83,6 +83,15 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Henrique/Aprender/Parab\xE9ns_Aprender.unity"
     guid: aa28796d8e4074049926eb2d774f9fb2
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/ParabensVerde.unity
+    guid: 17941777de5675a41a67c62f5128aa9a
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/DerrotaVerde.unity
+    guid: 16eceb891cf8fe44f8039519f630398f
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/EmpateVerde.unity
+    guid: 66554e4ee48aaeb47bec2dc2a27d53ea
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
