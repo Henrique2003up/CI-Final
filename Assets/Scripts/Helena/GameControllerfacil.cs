@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameControllerfacil : MonoBehaviour
 {
     [Header("UI Elements")]
     public Button[] boardButtons;
     public TextMeshProUGUI turnText;
-    public GameObject gameOverPanel;
-    public TextMeshProUGUI gameOverText;
 
     [Header("Game Images")]
     public Sprite emptySprite;
@@ -39,88 +38,104 @@ public class GameControllerfacil : MonoBehaviour
         for (int i = 0; i < boardState.Length; i++)
         {
             boardState[i] = "";
-
             if (boardButtons[i].image != null)
-            {
                 boardButtons[i].image.sprite = emptySprite;
-            }
 
             boardButtons[i].interactable = true;
         }
 
-        isPlayerMacaTurn = true;
-        turnText.text = "É a vez do Jogador Maca";
         movesMade = 0;
 
-        gameOverPanel.SetActive(false);
+        // Decide aleatoriamente quem começa
+        isPlayerMacaTurn = Random.value > 0.5f;
+
+        if (isPlayerMacaTurn)
+        {
+            turnText.text = "É a vez do Jogador Maçã";
+        }
+        else
+        {
+            turnText.text = "É a vez do Jogador Brócolo";
+            Invoke("MakeAIMove", 1f);
+        }
     }
 
     public void OnBoardButtonClick(int index)
     {
-        if (boardState[index] != "" || gameOverPanel.activeSelf)
-        {
+        if (boardState[index] != "" || !boardButtons[index].interactable)
             return;
-        }
 
         string currentPlayerSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
         boardState[index] = currentPlayerSymbol;
 
         if (boardButtons[index].image != null)
-        {
             boardButtons[index].image.sprite = isPlayerMacaTurn ? macaSprite : brocoloSprite;
-        }
 
         boardButtons[index].interactable = false;
         movesMade++;
 
         if (CheckForWin())
         {
-            EndGame(currentPlayerSymbol + " Venceu!");
+            if (isPlayerMacaTurn)
+                SceneManager.LoadScene("VitoriaVerde");
+            else
+                SceneManager.LoadScene("DerrotaVerde");
         }
         else if (movesMade == 9)
         {
-            EndGame("Empate!");
+            SceneManager.LoadScene("EmpateVerde");
         }
         else
         {
             isPlayerMacaTurn = !isPlayerMacaTurn;
-            turnText.text = "É a vez do Jogador " + (isPlayerMacaTurn ? "Maca" : "Brocolo");
+
+            if (!isPlayerMacaTurn)
+            {
+                turnText.text = "É a vez do Jogador Brócolo";
+                Invoke("MakeAIMove", 0.6f);
+            }
+            else
+            {
+                turnText.text = "É a vez do Jogador Maçã";
+            }
+        }
+    }
+
+    void MakeAIMove()
+    {
+        List<int> availableMoves = new List<int>();
+        for (int i = 0; i < boardState.Length; i++)
+        {
+            if (boardState[i] == "")
+            {
+                availableMoves.Add(i);
+            }
+        }
+
+        if (availableMoves.Count > 0)
+        {
+            int aiMove = availableMoves[Random.Range(0, availableMoves.Count)];
+            OnBoardButtonClick(aiMove);
         }
     }
 
     bool CheckForWin()
     {
-        string currentSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo"; // Corrigido aqui!
+        string currentSymbol = isPlayerMacaTurn ? "Maca" : "Brocolo";
 
         for (int i = 0; i < winConditions.GetLength(0); i++)
         {
-            int cell1 = winConditions[i, 0];
-            int cell2 = winConditions[i, 1];
-            int cell3 = winConditions[i, 2];
+            int a = winConditions[i, 0];
+            int b = winConditions[i, 1];
+            int c = winConditions[i, 2];
 
-            if (boardState[cell1] == currentSymbol &&
-                boardState[cell2] == currentSymbol &&
-                boardState[cell3] == currentSymbol)
+            if (boardState[a] == currentSymbol &&
+                boardState[b] == currentSymbol &&
+                boardState[c] == currentSymbol)
             {
                 return true;
             }
         }
         return false;
-    }
-
-    void EndGame(string message)
-    {
-        gameOverPanel.SetActive(true);
-        gameOverText.text = message;
-
-        foreach (Button button in boardButtons)
-        {
-            button.interactable = false;
-        }
-    }
-
-    public void RestartGame()
-    {
-        InitializeGame();
     }
 }

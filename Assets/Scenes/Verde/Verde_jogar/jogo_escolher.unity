@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.7657708, y: 0.5}
-  m_AnchoredPosition: {x: 323.18, y: -246.07}
+  m_AnchoredPosition: {x: 161, y: -28.999968}
   m_SizeDelta: {x: -210, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55456413
@@ -235,7 +235,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -1798500157351684647, guid: 6d33397306f61cf488e20ea933c3943b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -581,8 +581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 358.7, y: -100.06}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54, y: 276}
+  m_SizeDelta: {x: -683.163, y: -943.152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736175468
 MonoBehaviour:
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Escolher o teu n\xEDvel"
+  m_text: "Escolhe o teu n\xEDvel"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386f7c36be2dd3e43a615c8c7aa9c232, type: 2}
   m_sharedMaterial: {fileID: 529781417534926454, guid: 386f7c36be2dd3e43a615c8c7aa9c232, type: 2}
@@ -1039,7 +1039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47656253, y: 0.411}
   m_AnchorMax: {x: 0.5, y: 0.411}
-  m_AnchoredPosition: {x: 0.0000038146973, y: -150}
+  m_AnchoredPosition: {x: -4.0000076, y: 67.08065}
   m_SizeDelta: {x: 255, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786291996
@@ -1120,7 +1120,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 3312740919498105691, guid: 9deb1454b61f01946b8a80fd1c880971, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1171,7 +1171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -630.3, y: -218.79}
+  m_AnchoredPosition: {x: -476, y: -29}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836236329
@@ -1252,7 +1252,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 5117051548842092656, guid: df8e61b207ad46948b5f27f8c34c6521, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

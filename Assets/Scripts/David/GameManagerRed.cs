@@ -13,8 +13,8 @@ public class GameManagerRed : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
-    public string nextLevelSceneName = "Level2"; // Nome da cena do próximo nível
-    public string mainMenuSceneName = "MainMenu"; // Nome da cena do menu principal
+    public string nextLevelSceneName = "Nivel2"; // Nome da cena do próximo nível
+    public string mainMenuSceneName = "IntroJogo"; // Nome da cena do menu principal
 
     public GameObject defeatPanel;
     private Animator defeatPanelAnimator;
