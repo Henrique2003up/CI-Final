@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 36288128}
   - component: {fileID: 36288127}
   m_Layer: 5
-  m_Name: "Avan\xE7ar"
+  m_Name: Vamos La
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 36288128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 1051b5323f1500b43a14efc46fa9252d, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: EscolheoNvl
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &36288128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,8 +1179,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Apanha as frutas boas para passar de n\xEDvel!\nMas aten\xE7\xE3o: algumas
-    est\xE3o podres e fazem perder vida!\nS\xEA r\xE1pido, escolhe bem e diverte-te
-    a comer saud\xE1vel!\nClica em \"Vamos-l\xE1\" para jogar!"
+    est\xE3o podres e fazem perder vida!\nUsa as Setas do teclado para te moveres!\nClica
+    em \"Vamos-l\xE1\" para jogar!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 803684b8abb7c1e48a56193497731952, type: 2}
   m_sharedMaterial: {fileID: -1431418672974527432, guid: 803684b8abb7c1e48a56193497731952, type: 2}
@@ -1281,7 +1293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 32.000027, y: -461.75}
+  m_AnchoredPosition: {x: 55, y: -439}
   m_SizeDelta: {x: 1163.096, y: 156.059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968822380

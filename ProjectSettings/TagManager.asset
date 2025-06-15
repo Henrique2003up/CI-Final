@@ -51,5 +51,8 @@ TagManager:
   - name: UI
     uniqueID: 2122436379
     locked: 0
+  - name: Message
+    uniqueID: 3333890193
+    locked: 0
   m_RenderingLayers:
   - Default
