@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408449167}
   - component: {fileID: 408449168}
+  - component: {fileID: 408449169}
   m_Layer: 5
   m_Name: GameObjectVoltar
   m_TagString: Untagged
@@ -304,6 +305,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Aprender_Jogar
+--- !u!114 &408449169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408449166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Aprender_Jogar
 --- !u!1 &494430366
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951483957}
   - component: {fileID: 951483958}
+  - component: {fileID: 951483959}
   m_Layer: 5
   m_Name: GameObjectQuiz
   m_TagString: Untagged
@@ -948,6 +963,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: "Quiz_Saud\xE1vel"
+--- !u!114 &951483959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951483956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: "Quiz_Saud\xE1vel"
 --- !u!1 &1086923492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1058,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951483958}
+      - m_Target: {fileID: 951483959}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -1974,7 +2002,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408449168}
+      - m_Target: {fileID: 408449169}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1

@@ -641,7 +641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1335420057}
+      - m_Target: {fileID: 1335420058}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1335420057}
+      - m_Target: {fileID: 1335420058}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -1435,6 +1435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335420056}
   - component: {fileID: 1335420057}
+  - component: {fileID: 1335420058}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -1471,6 +1472,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbfbeb374666f154b9e8ac8b3e571f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightAnswer: 0
+  nextQuestionSceneName: "Parab\xE9ns_Aprender"
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  feedbackDuration: 1
+--- !u!114 &1335420058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335420055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9b04ea0be794f4bbf9b91ccf4a1601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
@@ -1635,7 +1652,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1335420057}
+      - m_Target: {fileID: 1335420058}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1

@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12515429}
   - component: {fileID: 12515430}
+  - component: {fileID: 12515431}
   m_Layer: 5
   m_Name: GameObjectVoltar
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Aprender_Jogar
+--- !u!114 &12515431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12515428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Aprender_Jogar
 --- !u!1 &151535737
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +993,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1285726921}
+      - m_Target: {fileID: 1285726922}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -1039,6 +1053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285726920}
   - component: {fileID: 1285726921}
+  - component: {fileID: 1285726922}
   m_Layer: 5
   m_Name: "GameObjectH\xE1bitos"
   m_TagString: Untagged
@@ -1078,6 +1093,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: "H\xE1bitos_Saud\xE1veis"
+--- !u!114 &1285726922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285726919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: "H\xE1bitos_Saud\xE1veis"
 --- !u!1 &1423930353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +2000,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 12515430}
+      - m_Target: {fileID: 12515431}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1

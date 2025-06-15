@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1218970216}
+      - m_Target: {fileID: 1218970217}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1197850473}
+      - m_Target: {fileID: 1197850474}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1197850473}
+      - m_Target: {fileID: 1197850474}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -903,7 +903,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1197850473}
+      - m_Target: {fileID: 1197850474}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -1310,6 +1310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197850472}
   - component: {fileID: 1197850473}
+  - component: {fileID: 1197850474}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -1346,6 +1347,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbfbeb374666f154b9e8ac8b3e571f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightAnswer: 1
+  nextQuestionSceneName: Pergunta 1.3
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  feedbackDuration: 1
+--- !u!114 &1197850474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197850471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9b04ea0be794f4bbf9b91ccf4a1601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 1
@@ -1437,6 +1454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1218970215}
   - component: {fileID: 1218970216}
+  - component: {fileID: 1218970217}
   m_Layer: 5
   m_Name: Voltar
   m_TagString: Untagged
@@ -1476,6 +1494,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Pergunta 1
+--- !u!114 &1218970217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218970214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Pergunta 1
 --- !u!1 &1291526109
 GameObject:
   m_ObjectHideFlags: 0

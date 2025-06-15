@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 84088760}
   - component: {fileID: 84088761}
+  - component: {fileID: 84088762}
   m_Layer: 5
   m_Name: GameObject2
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Pergunta 2
+--- !u!114 &84088762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84088759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Pergunta 2
 --- !u!1 &195825110
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 84088761}
+      - m_Target: {fileID: 84088762}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -389,6 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327189746}
   - component: {fileID: 327189747}
+  - component: {fileID: 327189748}
   m_Layer: 5
   m_Name: GameObject1
   m_TagString: Untagged
@@ -428,6 +443,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Pergunta 1
+--- !u!114 &327189748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327189745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Pergunta 1
 --- !u!1 &471643560
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +538,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 633521408}
+      - m_Target: {fileID: 633521409}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -570,6 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633521407}
   - component: {fileID: 633521408}
+  - component: {fileID: 633521409}
   m_Layer: 5
   m_Name: GameObject3
   m_TagString: Untagged
@@ -609,6 +638,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Pergunta 3
+--- !u!114 &633521409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633521406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Pergunta 3
 --- !u!1 &661372528
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669945745}
   - component: {fileID: 669945746}
+  - component: {fileID: 669945747}
   m_Layer: 5
   m_Name: Voltar
   m_TagString: Untagged
@@ -794,6 +837,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: "Quiz_Saud\xE1vel"
+--- !u!114 &669945747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669945744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: "Quiz_Saud\xE1vel"
 --- !u!1 &898271871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1135,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669945746}
+      - m_Target: {fileID: 669945747}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -1211,7 +1267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 327189747}
+      - m_Target: {fileID: 327189748}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1

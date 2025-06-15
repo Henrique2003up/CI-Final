@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177074356}
+      - m_Target: {fileID: 177074357}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
@@ -336,6 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 177074355}
   - component: {fileID: 177074356}
+  - component: {fileID: 177074357}
   m_Layer: 5
   m_Name: Voltar
   m_TagString: Untagged
@@ -374,7 +375,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1051b5323f1500b43a14efc46fa9252d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Escolhe_Nivel
+--- !u!114 &177074357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177074354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Escolhe_Nivel
 --- !u!1 &307074636
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1637498554}
+      - m_Target: {fileID: 1637498555}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -819,7 +832,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1637498554}
+      - m_Target: {fileID: 1637498555}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -952,7 +965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1637498554}
+      - m_Target: {fileID: 1637498555}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -1785,6 +1798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637498553}
   - component: {fileID: 1637498554}
+  - component: {fileID: 1637498555}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -1821,6 +1835,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbfbeb374666f154b9e8ac8b3e571f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1637498555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637498552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9b04ea0be794f4bbf9b91ccf4a1601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 2
