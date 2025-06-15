@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      botao creme_0: 9145374698969196111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
