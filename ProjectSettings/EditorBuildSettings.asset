@@ -50,7 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Jogar.unity
     guid: 67739b7e43e26774f9e72ab44e409253
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Verde/Verde_jogar/Os_parabens.unity
     guid: 6b987069cffbb1f40b2de75791ac8300
   - enabled: 1
@@ -92,6 +92,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Verde/Verde_jogar/EmpateVerde.unity
     guid: 66554e4ee48aaeb47bec2dc2a27d53ea
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/VitoriaVerde.unity
+    guid: 2f0506757be2e3245b157b5b3d16a72b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
