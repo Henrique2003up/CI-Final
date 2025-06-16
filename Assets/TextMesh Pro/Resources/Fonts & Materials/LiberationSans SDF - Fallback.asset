@@ -1063,6 +1063,8 @@ MonoBehaviour:
           m_YAdvance: 0
       m_FeatureLookupFlags: 0
     - m_FirstAdjustmentRecord:
+<<<<<<< HEAD
+=======
         m_GlyphIndex: 57
         m_GlyphValueRecord:
           m_XPlacement: 0
@@ -1258,6 +1260,7 @@ MonoBehaviour:
           m_YAdvance: 0
       m_FeatureLookupFlags: 0
     - m_FirstAdjustmentRecord:
+>>>>>>> f95d7b529cf3d3497ae2bc455df6b49511f091cb
         m_GlyphIndex: 73
         m_GlyphValueRecord:
           m_XPlacement: 0

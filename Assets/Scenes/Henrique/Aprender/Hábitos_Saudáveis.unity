@@ -1003,6 +1003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 733324278}
   - component: {fileID: 733324279}
+  - component: {fileID: 733324280}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -1042,6 +1043,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Video
+--- !u!114 &733324280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733324277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Video
 --- !u!1 &818476253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 733324279}
+      - m_Target: {fileID: 733324280}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: ChangeSceneAction
         m_Mode: 1
