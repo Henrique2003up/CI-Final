@@ -3,9 +3,15 @@ using UnityEngine;
 public class Fruit : MonoBehaviour
 {
     Transform tr;
+    private GameManagerRed gameManager; // Referência para o GameManager
     void Start()
     {
         tr = GetComponent<Transform>();
+        gameManager = FindObjectOfType<GameManagerRed>();
+        if (gameManager == null)
+        {
+            Debug.LogError("Fruit: GameManager não encontrado na cena!");
+        }
     }
 
     // Update is called once per frame
@@ -22,6 +28,10 @@ public class Fruit : MonoBehaviour
         // A LÓGICA DE DESTROI DEVE SER APENAS AQUI:
         if (collision.gameObject.name == "Basket") // Ou collision.gameObject.name == "Basket"
         {
+            if (gameManager != null)
+            {
+                    gameManager.AddScore(1); // Se for fruta boa, adiciona 1 ponto   
+            }
             Debug.Log("Condição 'Basket' satisfeita! Destruindo fruta.");
             Destroy(this.gameObject);
         }

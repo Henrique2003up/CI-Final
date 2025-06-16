@@ -16,7 +16,7 @@ public class Basket : MonoBehaviour
             Debug.Log("Seta Direita Pressionada! Pos X: " + tr.position.x); // Adicione este log
             if (tr.position.x < 580f)
             {
-                tr.position += new Vector3(1f, 0f, 0f);
+                tr.position += new Vector3(2f, 0f, 0f);
             }
             else
             {
@@ -30,7 +30,7 @@ public class Basket : MonoBehaviour
             Debug.Log("Seta Esquerda Pressionada! Pos X: " + tr.position.x); // Adicione este log
             if (tr.position.x > 240f)
             {
-                tr.position += new Vector3(-0.5f, 0f, 0f);
+                tr.position += new Vector3(-2f, 0f, 0f);
             }
             else
             {
