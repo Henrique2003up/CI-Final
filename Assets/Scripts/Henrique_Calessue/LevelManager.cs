@@ -19,11 +19,21 @@ public class LevelManager : MonoBehaviour
 
     public string nextQuestionSceneName;
 
-    // Feedback de erro
+    // Feedback visual
     public Color wrongColor = Color.red;
     public float feedbackDuration = 1f;
 
     private bool isLocked = false;
+
+    // Áudio
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void OnButtonClick()
     {
@@ -34,13 +44,23 @@ public class LevelManager : MonoBehaviour
 
         if (clickedItemName == rightAnswer.ToString())
         {
+            PlaySound(correctSound);
             GameManager.IncrementRightAnswer();
             SceneManager.LoadScene(nextQuestionSceneName);
         }
         else
         {
+            PlaySound(wrongSound);
             GameManager.IncrementWrongAnswer();
             StartCoroutine(ShowWrongFeedback(clickedButton));
+        }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 
@@ -48,14 +68,12 @@ public class LevelManager : MonoBehaviour
     {
         isLocked = true;
 
-        // Tenta pegar o componente de imagem e mudar a cor
         Image img = button.GetComponent<Image>();
         Color originalColor = img != null ? img.color : Color.white;
 
         if (img != null)
             img.color = wrongColor;
 
-        // Espera um pouco para mostrar o erro
         yield return new WaitForSeconds(feedbackDuration);
 
         if (img != null)
