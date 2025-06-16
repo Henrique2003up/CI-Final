@@ -3,72 +3,48 @@ using TMPro; // Necessário para TextMeshPro
 using UnityEngine.SceneManagement; // Necessário para gerir cenas
 using System.Collections; // Necessário para IEnumerator
 
-// Este script gerencia a pontuação, condições de vitória e transições de nível,
-// e agora o Game Over quando o cesto é destruído por uma fruta podre, e a condição de vitoria.
+// Este script gerencia a pontuação, condições de vitória e derrota,
+// e carregamento de cenas. Deve estar presente em CADA CENA onde sua lógica é necessária.
 public class GameManagerRed : MonoBehaviour
 {
+    [Header("Configurações do Nível Atual")]
     public int score = 0;
-    public int targetScore = 10; // Pontuação necessária para vencer o nível.
-    public int minScoreToLose = -5;
+    public int targetScore = 10; // Meta de pontuação para ESTE NÍVEL.
+    public int minScoreToLose = -5; // Pontuação mínima para perder ESTE NÍVEL.
 
-    public TextMeshProUGUI scoreText;
+    [Header("Referências da UI/Objetos Desta Cena")]
+    public TextMeshProUGUI scoreText; // TextMeshProUGUI da pontuação DESTA CENA.
+    public GameObject basketGameObject; // GameObject do cesto DESTA CENA.
 
-    public string nextLevelSceneName = "Nivel2"; // Nome da cena do próximo nível
-    public string mainMenuSceneName = "IntroJogo"; // Nome da cena do menu principal
+    [Header("Nomes das Cenas de Destino")]
+    // Nomes das cenas que este GameManager pode carregar.
+    // Atribua no Inspector para CADA INSTÂNCIA deste script (em cada cena).
+    public string winSceneName = "Parabéns"; // Cena de vitória para este nível.
+    public string defeatSceneName = "Derrota"; // Cena de derrota.
+    public string nextLevelSceneName = "Nivel2"; // Próximo nível (se este for um nível de jogo).
+    public string mainMenuSceneName = "IntroJogo"; // Cena do menu principal.
 
-    public GameObject defeatPanel;
-    private Animator defeatPanelAnimator;
-    public GameObject basketGameObject;
-
-    // --- NOVIDADE: Referências para o painel de Vitoria ---
-    public GameObject winPanel; // Arraste o seu GameObject do painel de vitória aqui no Inspector.
-    private Animator winPanelAnimator;
-    // --------------------------------------------------------
+    // REMOVIDO: Referências a painéis de derrota/vitória e animadores (se forem cenas completas).
+    // Se ainda usa painéis com animadores, adicione as referências de volta aqui.
+    // public GameObject defeatPanel;
+    // private Animator defeatPanelAnimator;
 
     void Start()
     {
-        score = 0;
+        score = 0; // Garante que a pontuação começa em 0 para CADA NOVO NÍVEL/CENA.
         UpdateScoreText();
 
-        // Configuração do Painel de Derrota
-        if (defeatPanel != null)
-        {
-            defeatPanel.SetActive(false);
-            defeatPanelAnimator = defeatPanel.GetComponent<Animator>();
-            if (defeatPanelAnimator == null)
-            {
-                Debug.LogError("GameManagerRed ERROR: Animator NÃO ENCONTRADO no defeatPanel! Adicione um Animator ao GameObject 'Derrota'.");
-            }
-        }
-        else
-        {
-            Debug.LogError("GameManagerRed ERROR: 'Defeat Panel' não atribuído no Inspector! O painel de derrota não vai aparecer.");
-        }
+        Time.timeScale = 1f; // Garante que o tempo do jogo está a correr.
 
-        // --- Configuração do Painel de Vitoria ---
-        if (winPanel != null)
-        {
-            winPanel.SetActive(false); // Garante que o painel de vitória está desativado no início.
-            winPanelAnimator = winPanel.GetComponent<Animator>();
-            if (winPanelAnimator == null)
-            {
-                Debug.LogError("GameManagerRed ERROR: Animator NÃO ENCONTRADO no winPanel! Adicione um Animator ao GameObject do painel de vitória.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("GameManagerRed WARNING: 'Win Panel' não atribuído no Inspector! A funcionalidade de vitória pode não ser completa.");
-        }
-        // -----------------------------------------------------
-
-        Time.timeScale = 1f;
+        // REMOVIDO: Lógica de inicialização de painéis e animadores.
+        // Se usar painéis, atribua-os e inicialize-os aqui.
     }
 
     public void AddScore(int amount)
     {
         score += amount;
         UpdateScoreText();
-        CheckWinCondition(); // Verifica a condição de vitória após adicionar pontos.
+        CheckWinCondition();
     }
 
     public void SubtractScore(int amount)
@@ -77,8 +53,8 @@ public class GameManagerRed : MonoBehaviour
         UpdateScoreText();
         if (score < minScoreToLose)
         {
-            Debug.Log("Você perdeu por pontuação baixa!");
-            GameOver(); // Chama a função de Game Over aqui.
+            Debug.Log("Você perdeu por pontuação baixa! Pontuação: " + score, this);
+            GameOver();
         }
     }
 
@@ -90,121 +66,76 @@ public class GameManagerRed : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("GameManagerRed: scoreText (UI TextMeshProUGUI) não atribuído no Inspector!");
+            Debug.LogWarning("GameManagerRed: scoreText (UI TextMeshProUGUI) não atribuído no Inspector desta cena!");
         }
     }
 
-    // --- MUDANÇA: Agora chama WinGame() em vez de carregar o próximo nível diretamente ---
     void CheckWinCondition()
     {
         if (score >= targetScore)
         {
-            Debug.Log("GameManagerRed DEBUG: Condição de vitória atingida! Pontuação: " + score);
-            WinGame(); // Chama a nova função para lidar com a vitória.
-        }
-    }
-    // ---------------------------------------------------------------------------------
-
-    // Corrotina para atrasar o carregamento da próxima cena.
-    // Usada por botões, não por auto-transição
-    IEnumerator DelayedLoadNextLevel(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        LoadNextLevel();
-    }
-
-    void LoadNextLevel()
-    {
-        if (!string.IsNullOrEmpty(nextLevelSceneName))
-        {
-            Time.timeScale = 1f; // Garante que o tempo do jogo está a correr para a nova cena
-            SceneManager.LoadScene(nextLevelSceneName);
-        }
-        else
-        {
-            Debug.LogError("GameManagerRed ERROR: nextLevelSceneName não definido! Não é possível carregar o próximo nível.");
+            Debug.Log("GameManagerRed DEBUG: Condição de vitória atingida! Pontuação: " + score, this);
+            WinGame();
         }
     }
 
+    // Chamado pelas frutas podres quando colidem com o cesto.
     public void TriggerBasketDestroyedGameOver()
     {
-        Debug.Log("GameManagerRed DEBUG: Cesto atingido por fruta podre! Chamando Game Over.");
+        Debug.Log("GameManagerRed DEBUG: Cesto atingido por fruta podre! Chamando Game Over.", this);
         if (basketGameObject != null)
         {
             Destroy(basketGameObject);
         }
         else
         {
-            Debug.LogError("GameManagerRed ERROR: basketGameObject não atribuído! Não é possível destruir o cesto.");
+            Debug.LogError("GameManagerRed ERROR: basketGameObject não atribuído nesta cena! Não é possível destruir o cesto.", this);
         }
         GameOver();
     }
 
     public void GameOver()
     {
-        Debug.Log("GameManagerRed DEBUG: Função GameOver() chamada. Pausando jogo e ativando painel.");
-        Time.timeScale = 0f; // Pausa o jogo (tudo para de se mover).
+        Debug.Log("GameManagerRed DEBUG: Função GameOver() chamada. Carregando cena de Derrota.", this);
+        Time.timeScale = 1f; // Volta o tempo ao normal para que a nova cena carregue corretamente
 
-        if (defeatPanel != null)
+        if (!string.IsNullOrEmpty(defeatSceneName))
         {
-            Debug.Log("GameManagerRed DEBUG: defeatPanel existe. Ativando...");
-            defeatPanel.SetActive(true); // Ativa o painel.
-
-            if (defeatPanelAnimator != null)
-            {
-                Debug.Log("GameManagerRed DEBUG: Animator de Derrota encontrado. Forçando animação 'Derrota_QuedaFinal'.");
-                defeatPanelAnimator.Play("Derrota_QuedaFinal"); // Use o nome do seu clip de animação de derrota
-            }
-            else
-            {
-                Debug.LogError("GameManagerRed ERROR: 'defeatPanelAnimator' é NULL! Não é possível tocar a animação de derrota.");
-            }
+            SceneManager.LoadScene(defeatSceneName);
         }
         else
         {
-            Debug.LogError("GameManagerRed ERROR: 'Defeat Panel' (GameObject) não atribuído no Inspector! O painel de derrota não vai aparecer.");
+            Debug.LogError("GameManagerRed ERROR: defeatSceneName não definido nesta cena! Não é possível carregar a cena de derrota.", this);
         }
     }
 
-    // --- NOVIDADE: Método chamado quando o jogador vence o jogo ---
     public void WinGame()
     {
-        Debug.Log("GameManagerRed DEBUG: Função WinGame() chamada. Vitoria!");
-        Time.timeScale = 0f; // Pausa o jogo.
+        Debug.Log("GameManagerRed DEBUG: Função WinGame() chamada. Carregando cena de Vitória: " + winSceneName, this);
+        Time.timeScale = 1f;
 
-        if (winPanel != null)
+        if (!string.IsNullOrEmpty(winSceneName))
         {
-            Debug.Log("GameManagerRed DEBUG: winPanel existe. Ativando...");
-            winPanel.SetActive(true); // Ativa o painel de vitória.
-
-            if (winPanelAnimator != null)
-            {
-                Debug.Log("GameManagerRed DEBUG: Animator de Vitoria encontrado. Forçando animação 'Vitoria_QuedaFinal'.");
-                winPanelAnimator.Play("Vitoria_QuedaFinal"); // Nome do clip de animação de vitória.
-            }
-            else
-            {
-                Debug.LogError("GameManagerRed ERROR: 'winPanelAnimator' é NULL! Não é possível tocar a animação de vitória.");
-            }
+            SceneManager.LoadScene(winSceneName);
         }
         else
         {
-            Debug.LogError("GameManagerRed ERROR: 'Win Panel' (GameObject) não atribuído no Inspector! O painel de vitória não vai aparecer.");
+            Debug.LogError("GameManagerRed ERROR: winSceneName não definido nesta cena! Não é possível carregar a cena de vitória.", this);
         }
-
-        // REMOVIDO: StartCoroutine(DelayedLoadNextLevel(3f));
-        // A transição será feita pelos botões no painel de vitória.
     }
-    // ---------------------------------------------------------------------------------
 
+    // --- MÉTODOS PÚBLICOS (NÃO ESTÁTICOS) PARA OS BOTÕES ---
+    // Estes métodos serão ligados aos botões arrastando o GameObject deste GameManagerRed.
     public void RestartGame()
     {
+        Debug.Log("GameManagerRed DEBUG: Reiniciando jogo para a cena atual: " + SceneManager.GetActiveScene().name, this);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToMainMenu()
     {
+        Debug.Log("GameManagerRed DEBUG: Indo para o menu principal: " + mainMenuSceneName, this);
         Time.timeScale = 1f;
         if (!string.IsNullOrEmpty(mainMenuSceneName))
         {
@@ -212,14 +143,21 @@ public class GameManagerRed : MonoBehaviour
         }
         else
         {
-            Debug.LogError("GameManagerRed ERROR: mainMenuSceneName não definido! Não é possível carregar o menu principal.");
+            Debug.LogError("GameManagerRed ERROR: mainMenuSceneName não definido nesta cena! Não é possível carregar o menu principal.", this);
         }
     }
 
-    // --- NOVIDADE: Função para Carregar o Próximo Nível (para ser ligada a um botão) ---
-    public void LoadNextLevelDelayed(float delay)
+    public void LoadNextLevel()
     {
-        StartCoroutine(DelayedLoadNextLevel(delay));
+        Debug.Log("GameManagerRed DEBUG: Carregando o próximo nível: " + nextLevelSceneName, this);
+        Time.timeScale = 1f;
+        if (!string.IsNullOrEmpty(nextLevelSceneName))
+        {
+            SceneManager.LoadScene(nextLevelSceneName);
+        }
+        else
+        {
+            Debug.LogError("GameManagerRed ERROR: nextLevelSceneName não definido nesta cena! Não é possível carregar o próximo nível.", this);
+        }
     }
-    // ----------------------------------------------------------------------------------
 }

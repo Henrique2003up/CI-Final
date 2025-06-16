@@ -95,6 +95,39 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Verde/Verde_jogar/VitoriaVerde.unity
     guid: 2f0506757be2e3245b157b5b3d16a72b
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Nivel1.unity
+    guid: f3a7bdca245e0cb43b1d2fa38be7a756
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Nivel2.unity
+    guid: 19e10ecd39411674c87a41121361709e
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Derrota.unity
+    guid: e20bf9fba24bb1d4186fd36d301913d1
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/EscolheoNvl.unity
+    guid: 1507b6d42b9d24c478113605ecd817da
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/IntroJogo.unity
+    guid: 25a8c88d7070cd1438c0f3a62f4ef952
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Nivel3.unity
+    guid: 8cbf22be57591ad48a2c66bfd4039d39
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens.unity
+    guid: 7b48d4a18bae934409ee37445907e7d2
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens1.unity
+    guid: 06f912fedf277e04996f005b29069a1c
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens2.unity
+    guid: 57eb587965d94674e8a23d1b7e1aa893
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Derrota1.unity
+    guid: 2d64df5ce70da9049b0a4280aaf35ea1
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Derrota2.unity
+    guid: 1a45b37ce2717054abae35c997180eb6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
