@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class GameManager : MonoBehaviour
+public class Game : MonoBehaviour
 {
     private static int seconds;
     public static void SetSeconds(int newSeconds)

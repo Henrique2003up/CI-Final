@@ -1,48 +1,35 @@
-using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
-
+using UnityEngine;
+//Este script deve estar associado a um GameObject que também tenha o TMP_Text 
 public class TimerScript : MonoBehaviour
 {
-    private TMP_Text timerText;
+    public TMP_Text timerText;
     private float currentTimer;
     private bool isCounting;
-
+    // Start is called before the first frame update 
     void Start()
     {
-        timerText = GetComponent<TMP_Text>();
-        currentTimer = 0f;
+        //timerText = GetComponent<TMP_Text>();
+        currentTimer = 0;
         isCounting = true;
     }
-
+    // Update is called once per frame 
     void Update()
     {
         if (!isCounting)
+        {
             return;
-
+        }
         currentTimer += Time.deltaTime;
-        int roundedTime = Mathf.FloorToInt(currentTimer);
-        timerText.text = roundedTime.ToString() + "s";
+        //Subtract elapsed time every frame 
+        float seconds = Mathf.FloorToInt(currentTimer % 30);
+        timerText.text = $"{seconds:00}";
     }
-
-    public float GetTimerAndStop()
+    public int GetTimerAndStop()
     {
         isCounting = false;
-        return currentTimer;
-    }
-
-    public void StopTimer()
-    {
-        isCounting = false;
-    }
-
-    public void ResetTimer()
-    {
-        currentTimer = 0f;
-        isCounting = true;
-    }
-
-    public void PauseTimer()
-    {
-        isCounting = false;
+        return (int)currentTimer;
     }
 }
