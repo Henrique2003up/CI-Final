@@ -311,6 +311,14 @@ MonoBehaviour:
   shouldUseSprites: 1
   victoryMusic: {fileID: 0}
   timerScript: {fileID: 0}
+<<<<<<< HEAD
+--- !u!114 &177764758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3412325490587874019, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
+  m_PrefabInstance: {fileID: 1578721080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+=======
 --- !u!1 &99941747
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,11 +363,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99941747}
+>>>>>>> 19d4a17328c58a620d3fd1d1219bb30088de7d8c
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+--- !u!114 &189441202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 506573362538069301, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
+  m_PrefabInstance: {fileID: 500935234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+=======
   m_Material: {fileID: 0}
   m_Color: {r: 0.48679683, g: 0.6830188, b: 0.4626486, a: 1}
   m_RaycastTarget: 0
@@ -386,6 +408,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99941747}
   m_CullTransparentMesh: 1
+>>>>>>> 19d4a17328c58a620d3fd1d1219bb30088de7d8c
 --- !u!1001 &500935234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1996,7 +2019,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 99941748}
   - {fileID: 959964346}
   - {fileID: 1617170634}
   - {fileID: 701146171}
