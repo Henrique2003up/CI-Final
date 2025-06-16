@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      koala_0: -240497826458894158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

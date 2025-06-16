@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      urso alperce_0: 2905775785654500861
+      urso alperce_1: 7531844857249540001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
