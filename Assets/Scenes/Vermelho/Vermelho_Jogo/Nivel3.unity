@@ -1591,9 +1591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpawnInterval: 1.5
-  minSpawnInterval: 0.2
-  difficultyRampRate: 0.03
-  initialBadFruitThreshold: 200
+  minSpawnInterval: 0.4
+  difficultyRampRate: 0.02
+  initialBadFruitThreshold: 120
   baseSpawnHeight: 400
   heightVariation: 50
   goodFruit: {fileID: 6605974424042813234, guid: c1eed7db0502f92448d20756acc56fc1, type: 3}
