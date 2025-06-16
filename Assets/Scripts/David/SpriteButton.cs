@@ -1,98 +1,157 @@
 using UnityEngine;
-using UnityEngine.Events; // Necessário para UnityEvent
+using UnityEngine.Events;
 
-// Este script permite que um GameObject com SpriteRenderer e Collider2D
-// atue como um botão, detetando cliques do rato ou toques.
+// Garante que este GameObject tem SEMPRE um SpriteRenderer e um BoxCollider2D.
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class SpriteButton : MonoBehaviour
 {
-    // A função a ser chamada quando o botão é clicado.
-    // Defina esta opção no Inspector.
-    // Ex: 'GameManagerRed' GameObject e 'RestartGame' ou 'GoToMainMenu' função.
     public UnityEvent OnClick;
 
-    // Referência ao SpriteRenderer para efeitos visuais de clique.
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
 
-    // Cor original do sprite.
     private Color originalColor;
 
-    // Cor para quando o rato/toque está em cima do botão.
     public Color hoverColor = Color.gray;
-
-    // Cor para quando o botão é pressionado.
     public Color pressedColor = Color.white;
 
-    // Flag para verificar se o rato está atualmente sobre o botão.
     private bool isMouseOver = false;
 
-    void Start()
-    {
-        // Obtém o componente SpriteRenderer anexado a este GameObject.
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            originalColor = spriteRenderer.color; // Guarda a cor original.
-        }
-        else
-        {
-            Debug.LogError("SpriteButton: SpriteRenderer não encontrado no GameObject '" + gameObject.name + "'. Este script requer um SpriteRenderer.");
-            enabled = false; // Desativa o script se não houver SpriteRenderer.
-            return;
-        }
+    // NOVO: Campos para ajuste manual do collider no Inspector
+    public bool useManualColliderValues = false; // Marque esta caixa para usar os valores abaixo
+    public Vector2 manualColliderOffset = Vector2.zero; // Offset manual do collider
+    public Vector2 manualColliderSize = Vector2.one;    // Tamanho manual do collider
 
-        // Certifica-se de que o GameObject tem um Collider 2D para detetar cliques/toques.
-        if (GetComponent<Collider2D>() == null)
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        if (spriteRenderer == null)
         {
-            Debug.LogError("SpriteButton: O GameObject '" + gameObject.name + "' precisa de um Collider2D para detetar cliques! Adicione um Box Collider 2D ou similar.");
-            enabled = false; // Desativa o script se não houver Collider2D.
+            Debug.LogError("SpriteButton: Awake - SpriteRenderer not found on '" + gameObject.name + "'.", this);
+        }
+        if (boxCollider == null)
+        {
+            Debug.LogError("SpriteButton: Awake - BoxCollider2D not found on '" + gameObject.name + "'.", this);
         }
     }
 
-    // Chamado quando o rato entra no Collider 2D do GameObject.
+    void OnEnable()
+    {
+        // Certifica-se de que o Collider2D está ativo e NÃO é um trigger.
+        if (boxCollider != null)
+        {
+            boxCollider.enabled = true; // Garante que o componente collider está ativo.
+            boxCollider.isTrigger = false; // MUITO IMPORTANTE: Garante que NÃO é um trigger para OnMouse* funcionar.
+        }
+        else
+        {
+            Debug.LogError("SpriteButton: OnEnable - BoxCollider2D is null on '" + gameObject.name + "'. Clicks will not work.", this);
+            enabled = false;
+            return;
+        }
+
+        // NOVO: Aplica ajuste manual ou automático do collider.
+        ApplyColliderAdjustment();
+
+        // Restaura a cor original quando o botão é ativado.
+        if (spriteRenderer != null)
+        {
+            originalColor = spriteRenderer.color;
+        }
+
+        // DEBUG: Loga o estado final do collider ao ser ativado.
+        Debug.Log("SpriteButton DEBUG: '" + gameObject.name + "' OnEnable. Collider enabled: " + boxCollider.enabled + ", Is Trigger: " + boxCollider.isTrigger + ", Final Size: " + boxCollider.size + ", Final Offset: " + boxCollider.offset, this);
+    }
+
+    // NOVO: Método para aplicar o ajuste do collider (manual ou automático).
+    void ApplyColliderAdjustment()
+    {
+        if (useManualColliderValues)
+        {
+            // Usa os valores definidos manualmente no Inspector
+            boxCollider.offset = manualColliderOffset;
+            boxCollider.size = manualColliderSize;
+            Debug.Log("SpriteButton DEBUG: '" + gameObject.name + "' - Usando valores de collider manuais. Offset: " + manualColliderOffset + ", Size: " + manualColliderSize, this);
+        }
+        else // Se não usar manual, tenta o ajuste automático
+        {
+            if (spriteRenderer != null && spriteRenderer.sprite != null)
+            {
+                boxCollider.size = new Vector2(
+                    spriteRenderer.sprite.bounds.size.x * transform.localScale.x,
+                    spriteRenderer.sprite.bounds.size.y * transform.localScale.y
+                );
+                boxCollider.offset = spriteRenderer.sprite.bounds.center;
+                Debug.Log("SpriteButton DEBUG: '" + gameObject.name + "' - Usando valores de collider automáticos. Offset: " + boxCollider.offset + ", Size: " + boxCollider.size, this);
+            }
+            else
+            {
+                Debug.LogWarning("SpriteButton WARNING: '" + gameObject.name + "' - Sprite ou SpriteRenderer não atribuído. O collider pode não ser dimensionado corretamente.", this);
+            }
+        }
+    }
+
+    // Adiciona uma função que pode ser chamada pelo Editor para forçar o ajuste (apenas para verificar).
+    [ContextMenu("Forçar Ajuste do Collider")]
+    void ForceAdjustColliderInEditor()
+    {
+        Awake(); // Garante que as referências são obtidas.
+        ApplyColliderAdjustment(); // Re-aplica o ajuste.
+        Debug.Log("SpriteButton: Collider forced to adjust on '" + gameObject.name + "'. Size: " + boxCollider.size + ", Offset: " + boxCollider.offset, this);
+    }
+
     private void OnMouseEnter()
     {
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = hoverColor; // Muda a cor para o efeito de "hover".
+            spriteRenderer.color = hoverColor;
         }
         isMouseOver = true;
     }
 
-    // Chamado quando o rato sai do Collider 2D do GameObject.
     private void OnMouseExit()
     {
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = originalColor; // Volta à cor original.
+            spriteRenderer.color = originalColor;
         }
         isMouseOver = false;
     }
 
-    // Chamado quando o botão do rato é pressionado (e solto) enquanto sobre o Collider 2D.
     private void OnMouseDown()
     {
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = pressedColor; // Muda a cor para o efeito de "pressionado".
+            spriteRenderer.color = pressedColor;
         }
+        Debug.Log("SpriteButton DEBUG: '" + gameObject.name + "' OnMouseDown detected! Collider Is Trigger: " + boxCollider.isTrigger, this);
     }
 
-    // Chamado quando o botão do rato é libertado enquanto sobre o Collider 2D.
     private void OnMouseUp()
     {
-        if (spriteRenderer != null && isMouseOver) // Verifica se o rato ainda está sobre o botão.
+        if (spriteRenderer != null)
         {
-            spriteRenderer.color = hoverColor; // Volta à cor de "hover" se o rato ainda estiver lá.
-        }
-        else if (spriteRenderer != null)
-        {
-            spriteRenderer.color = originalColor; // Volta à cor original se o rato já saiu.
+            if (isMouseOver)
+            {
+                spriteRenderer.color = hoverColor;
+            }
+            else
+            {
+                spriteRenderer.color = originalColor;
+            }
         }
 
-        // Se o rato estava sobre o botão quando foi solto, invoca o evento OnClick.
         if (isMouseOver)
         {
-            OnClick.Invoke(); // Dispara as funções conectadas no Inspector.
+            Debug.Log("SpriteButton DEBUG: '" + gameObject.name + "' OnClick.Invoke() fired!", this);
+            OnClick.Invoke();
+        }
+        else
+        {
+            Debug.Log("SpriteButton DEBUG: '" + gameObject.name + "' OnMouseUp detected, but mouse outside button. OnClick NOT fired.", this);
         }
     }
 }
