@@ -150,7 +150,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1483669209}
+  - {fileID: 7005426181442340529}
   - {fileID: 765237059}
   - {fileID: 1136072924}
   - {fileID: 1306204718}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfCards:
-  - {fileID: 1483669205}
+  - {fileID: 8327337566358448485}
   - {fileID: 765237055}
   - {fileID: 1136072920}
   - {fileID: 1306204714}
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfCards:
-  - {fileID: 1483669205}
+  - {fileID: 8327337566358448485}
   - {fileID: 765237055}
   - {fileID: 1136072920}
   - {fileID: 1306204714}
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   sprites:
   - {fileID: -9182177788924653191, guid: 8a0eb7fa102c5b046943422b3fff4a92, type: 3}
   - {fileID: 7549672006538830878, guid: 5e7d018b8906e7543b3de2239ecfbd74, type: 3}
-  shouldUseSprites: 0
+  shouldUseSprites: 1
   victoryMusic: {fileID: 0}
   timerScript: {fileID: 1762067426}
 --- !u!1001 &1483669204
@@ -1350,22 +1350,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
---- !u!114 &1483669205 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8327337564887406513, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
-  m_PrefabInstance: {fileID: 1483669204}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de64841b625c3ba4d8afaad35c528e9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &1483669209 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7005426180777670757, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
-  m_PrefabInstance: {fileID: 1483669204}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1762067424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2020,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &7005426181442340529 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7005426180777670757, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
+  m_PrefabInstance: {fileID: 1483669204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8327337566358448485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8327337564887406513, guid: 304425d916e613c4e8bd74887d42346d, type: 3}
+  m_PrefabInstance: {fileID: 1483669204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de64841b625c3ba4d8afaad35c528e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
