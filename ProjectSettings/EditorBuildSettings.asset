@@ -176,5 +176,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens2.unity
     guid: 57eb587965d94674e8a23d1b7e1aa893
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Aprender_Amarelo/ConclusaoAmarelo.unity
+    guid: ed305230cf0b2b94fa50fef76610c897
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: ece05605866a2774d9426ffc57e13be8
+guid: d699b32716467e34dbf40af345ae8b8e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3215882796084306496
-    second: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_0"
-  - first:
-      213: 8208682633579013327
-    second: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_1"
-  - first:
-      213: 28567306404884604
-    second: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_2"
-  - first:
-      213: -596559987480134720
-    second: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_3"
+      213: -596846058496633845
+    second: botao_amarelo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_0"
+      name: botao_amarelo_0
       rect:
         serializedVersion: 2
-        x: 1952
-        y: 2213
-        width: 97
-        height: 185
+        x: 0
+        y: 0
+        width: 2425
+        height: 758
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cdda1ca2a3ee53d0800000000000000
-      internalID: -3215882796084306496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_1"
-      rect:
-        serializedVersion: 2
-        x: 866
-        y: 1537
-        width: 180
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc425602d591be170800000000000000
-      internalID: 8208682633579013327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_2"
-      rect:
-        serializedVersion: 2
-        x: 951
-        y: 82
-        width: 1721
-        height: 2090
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c70f37650dd756000800000000000000
-      internalID: 28567306404884604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_3"
-      rect:
-        serializedVersion: 2
-        x: 865
-        y: 767
-        width: 151
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cbf8032ad798b7f0800000000000000
-      internalID: -596559987480134720
+      spriteID: b0457b90ca397b7f0800000000000000
+      internalID: -596846058496633845
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -222,11 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_0": -3215882796084306496
-      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_1": 8208682633579013327
-      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_2": 28567306404884604
-      "Sem t\xEDtulo-1_Prancheta 1 c\xF3pia 3_3": -596559987480134720
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

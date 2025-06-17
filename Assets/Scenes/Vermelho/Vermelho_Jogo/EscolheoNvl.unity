@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4218cb142cad32d47a539a7723f99a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: IntroJogo
+  sceneName: IntroJogo_Red
 --- !u!224 &99104160
 RectTransform:
   m_ObjectHideFlags: 0
