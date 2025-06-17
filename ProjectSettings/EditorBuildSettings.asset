@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: "Assets/Scenes/Amarelo/Jogar_Amarelo/Luzia/Parab\xE9ns_Galo.unity"
     guid: f35e0452d6f68e84cbe6c43bca930c4e
   - enabled: 1
@@ -23,5 +24,177 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Aprender_Jogar.unity
     guid: c2456d183902ed74a8dafc93a35a7efd
+=======
+    path: Assets/Scenes/Inicio.unity
+    guid: 48813b74c3c24e543bcff230c8441ffd
+  - enabled: 1
+    path: Assets/Scenes/Menus/Aprender_Jogar.unity
+    guid: c2456d183902ed74a8dafc93a35a7efd
+  - enabled: 1
+    path: Assets/Scenes/Menus/Aprender.unity
+    guid: 5ae3358916a0c564abd8e0e87ec2fe13
+  - enabled: 1
+    path: Assets/Scenes/Menus/Jogar.unity
+    guid: 67739b7e43e26774f9e72ab44e409253
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Aprender_Amarelo/Intro_Amarelo.unity
+    guid: 663fed5df3233a04f86db3f55e9aaeed
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Aprender_Amarelo/Pergunta_Amarelo.unity
+    guid: a35328351c2ce8b45a1a2f920ff0da9b
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Aprender_Amarelo/Video_Amarelo.unity
+    guid: 800abc0aac2d5174bbc7158c8d5dc3d3
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Jogar_Amarelo/FinalSceneManager.unity
+    guid: 6cc0c52e899142748a1cb4b489575d10
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Jogar_Amarelo/IntroJogo.unity
+    guid: 364a0e812b8b4664fbd8971b45e63b66
+  - enabled: 1
+    path: Assets/Scenes/Amarelo/Jogar_Amarelo/Nivel3.unity
+    guid: 37743adb9dfcfa245ab29703a5ee3d8d
+  - enabled: 1
+    path: "Assets/Scenes/Amarelo/Jogar_Amarelo/N\xEDveis.unity"
+    guid: 65156d47218842245b4ef570566ad482
+  - enabled: 1
+    path: "Assets/Scenes/Amarelo/Jogar_Amarelo/N\xEDvel1.unity"
+    guid: 5764d5cc09d44cf4394cc3d133820791
+  - enabled: 1
+    path: "Assets/Scenes/Amarelo/Jogar_Amarelo/N\xEDvel2.unity"
+    guid: 885691b4b92b61947ba750ef2da3d519
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Aprender/Agora_Pergunta.unity
+    guid: 26997274d3ca23f4c8da62e9d78f7048
+  - enabled: 1
+    path: "Assets/Scenes/Henrique/Aprender/H\xE1bitos_Saud\xE1veis.unity"
+    guid: be6b901450dae5a45af1ee93e8d1cef1
+  - enabled: 1
+    path: "Assets/Scenes/Henrique/Aprender/Parab\xE9ns_Aprender.unity"
+    guid: aa28796d8e4074049926eb2d774f9fb2
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Aprender/Video_Azul.unity
+    guid: 428f752f3320e6d4fb1c81902942b12c
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Escolhe_Nivel.unity
+    guid: e5e47ed42e508794390300d77df5048c
+  - enabled: 1
+    path: "Assets/Scenes/Henrique/Jogo/Parab\xE9ns.unity"
+    guid: 09b6d61a1b51c4d47a783592e616f90d
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 1.2.unity
+    guid: 8ae5c63c554018641a779587de9b6119
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 1.3.unity
+    guid: a11e72c68cce24349bb58d3cecd7688e
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 1.unity
+    guid: cbf20af3fc03ced459e81e928a88caa4
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 2.1.unity
+    guid: c78abea7f8f1da446b0c4e084a1c59c5
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 2.2.unity
+    guid: b288fa15d9072e944b16dc9859bebe8b
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 2.unity
+    guid: 6c12981a7486f6c4996a1a852c276a1d
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 3.1.unity
+    guid: c334d40cc30b5074493211d2d4693d6a
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 3.2.unity
+    guid: c90b04f80142bf34e8e4cb2f63519d06
+  - enabled: 1
+    path: Assets/Scenes/Henrique/Jogo/Pergunta 3.unity
+    guid: cacfad46fa58b2a4c8924076bc95bd06
+  - enabled: 1
+    path: "Assets/Scenes/Henrique/Jogo/Quiz_Saud\xE1vel.unity"
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_Aprender/ConclusaoVerde.unity
+    guid: 21343d3a9d3784543a7ed38fea5cd47d
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_Aprender/IntroApre.unity
+    guid: 7a4d89763aaf6a14b9dfe70e675318af
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_Aprender/pergunta1.unity
+    guid: a9d982d15592a0441a5a9c759ba3f804
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_Aprender/Tv.unity
+    guid: 83540cb6fec7fac4498db3389256809e
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/DerrotaVerde.unity
+    guid: 16eceb891cf8fe44f8039519f630398f
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/EmpateVerde.unity
+    guid: 66554e4ee48aaeb47bec2dc2a27d53ea
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/jogo_escolher.unity
+    guid: e3eb3d19e2960794dba69831e96c4fdc
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/jogo_intro.unity
+    guid: 39a4ab0fbcef6634893469db442f9695
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/jogo_nivel_1.unity
+    guid: 6e18e2dd78f27094b8ec3cc3415aadf9
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/jogo_nivel_2.unity
+    guid: 5e6b1869ce001304687599696898efce
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/jogo_nivel_3.unity
+    guid: e9a585213e22d5f4dad463dcf108cd98
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/ParabensVerde.unity
+    guid: 17941777de5675a41a67c62f5128aa9a
+  - enabled: 1
+    path: Assets/Scenes/Verde/Verde_jogar/VitoriaVerde.unity
+    guid: 2f0506757be2e3245b157b5b3d16a72b
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Aprender/Conclusao.unity
+    guid: 51fdd9fa828a23c47a77234a7aec14be
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Aprender/Intro.unity
+    guid: 23fb3f41e2063fe47b1a645eecb1614d
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Aprender/Pergunta.unity
+    guid: bf976fdee72996a408ce5cfdb7190159
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Aprender/Video_Fruta.unity
+    guid: 8c5ca985de396574084eb52278eecfc5
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Derrota.unity
+    guid: e20bf9fba24bb1d4186fd36d301913d1
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Derrota1.unity
+    guid: 2d64df5ce70da9049b0a4280aaf35ea1
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Derrota2.unity
+    guid: 1a45b37ce2717054abae35c997180eb6
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/EscolheoNvl.unity
+    guid: 1507b6d42b9d24c478113605ecd817da
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/IntroJogo_Red.unity
+    guid: 25a8c88d7070cd1438c0f3a62f4ef952
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Nivel1_Red.unity
+    guid: 55b284af8e657604589bc9af033b5350
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Nivel2_Red.unity
+    guid: 19e10ecd39411674c87a41121361709e
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Nivel3_Red.unity
+    guid: 8cbf22be57591ad48a2c66bfd4039d39
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens.unity
+    guid: 7b48d4a18bae934409ee37445907e7d2
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens1.unity
+    guid: 06f912fedf277e04996f005b29069a1c
+  - enabled: 1
+    path: Assets/Scenes/Vermelho/Vermelho_Jogo/Parabens2.unity
+    guid: 57eb587965d94674e8a23d1b7e1aa893
+>>>>>>> fe35595d2b5806dfe292790241f294cea506ec92
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
